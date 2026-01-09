@@ -837,7 +837,7 @@
       
       <div class="benefit-card">
         <div class="benefit-icon">
-          <i class="fas fa-sparkles"></i>
+          <i class="fas fa-broom"></i>
         </div>
         <h3>Easy Cleaning</h3>
         <p>Glass surfaces and removable parts for effortless maintenance</p>

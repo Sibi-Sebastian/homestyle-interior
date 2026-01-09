@@ -1074,12 +1074,12 @@
                 <!-- <a href="#" class="btn-cta pulse-btn">
                     <i class="fas fa-shopping-cart"></i> Order Now
                 </a> -->
-                <a href="#" class="btn-cta" style="background: var(--white); color: var(--pink);">
-                    <i class="fab fa-whatsapp"></i> Chat with Expert
+                <a href="https://wa.me/919945689996" class="btn-cta" style="background: var(--white); color: var(--pink);">
+                    <i class="fab fa-whatsapp"></i> Get Expert Advice
                 </a>
-                <a href="#" class="btn-cta" style="background: transparent; border: 2px solid var(--white);">
-                    <i class="fas fa-phone"></i> Call for Consultation
-                </a>
+                <a href="tel:919945689996" class="btn-cta" style="background: transparent; border: 2px solid var(--white);">
+                    <i class="fas fa-phone"></i> Call for Free Demo
+                </a>>
             </div>
         </div>
     </section>

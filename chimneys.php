@@ -826,7 +826,7 @@
       
       <div class="benefit-card">
         <div class="benefit-icon">
-          <i class="fas fa-sparkles"></i>
+          <i class="fas fa-magic"></i>
         </div>
         <h3>Auto-Clean Technology</h3>
         <p>Self-cleaning function reduces maintenance by 70%</p>

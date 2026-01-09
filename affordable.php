@@ -675,7 +675,7 @@
                     Discover the perfect balance of premium comfort and exceptional value with Peps Luxury Mattress. Experience 5-star hotel comfort at home.
                 </p>
                 <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                    <a href="#price-section" class="btn btn-primary">View Pricing</a>
+                    <a href="#size-visualizer" class="btn btn-primary">Choose your size</a>
                     <a href="#gallery" class="btn" style="background: transparent; border: 2px solid var(--white); color: var(--white);">
                         Explore Features
                     </a>
@@ -871,10 +871,10 @@
                 <!-- <a href="#" class="btn-cta pulse-btn">
                     <i class="fas fa-shopping-cart"></i> Order Now & Save
                 </a> -->
-                <a href="#" class="btn-cta" style="background: var(--white); color: var(--pink);">
+                <a href="https://wa.me/919945689996" class="btn-cta" style="background: var(--white); color: var(--pink);">
                     <i class="fab fa-whatsapp"></i> Get Expert Advice
                 </a>
-                <a href="#" class="btn-cta" style="background: transparent; border: 2px solid var(--white);">
+                <a href="tel:919945689996" class="btn-cta" style="background: transparent; border: 2px solid var(--white);">
                     <i class="fas fa-phone"></i> Call for Free Demo
                 </a>
             </div>

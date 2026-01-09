@@ -1171,13 +1171,13 @@
                 Experience the absolute pinnacle of sleep luxury with Ultra Luxury Peps Mattress - where supreme craftsmanship meets ultimate comfort technology.
             </p>
             <div class="cta-buttons">
-                <a href="#" class="btn-cta pulse-btn">
+                <!-- <a href="#" class="btn-cta pulse-btn">
                     <i class="fas fa-crown"></i> Experience Ultra Luxury
-                </a>
-                <a href="#" class="btn-cta" style="background: var(--white); color: var(--deep-blue);">
+                </a> -->
+                <a href="https://wa.me/919945689996" class="btn-cta" style="background: var(--white); color: var(--deep-blue);">
                     <i class="fab fa-whatsapp"></i> Ultra Consultation
                 </a>
-                <a href="#" class="btn-cta" style="background: transparent; border: 2px solid var(--white); color: var(--white);">
+                <a href="tel:919945689996" class="btn-cta" style="background: transparent; border: 2px solid var(--white); color: var(--white);">
                     <i class="fas fa-phone"></i> Call Ultra Advisor
                 </a>
             </div>

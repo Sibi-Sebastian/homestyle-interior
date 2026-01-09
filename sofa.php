@@ -871,7 +871,7 @@
       
       <div class="benefit-card">
         <div class="benefit-icon">
-          <i class="fas fa-sparkles"></i>
+          <i class="fas fa-tools"></i>
         </div>
         <h3>Easy Maintenance</h3>
         <p>Stain-resistant fabrics and removable covers for effortless care</p>

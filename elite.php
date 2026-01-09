@@ -1108,11 +1108,11 @@
                 Experience the pinnacle of sleep luxury with Elite Luxury Peps Mattress - where premium craftsmanship meets ultimate comfort.
             </p>
             <div class="cta-buttons">
-                <a href="#" class="btn-cta" style="background: var(--white); color: var(--pink);">
-                    <i class="fab fa-whatsapp"></i> Chat with Expert
+                <a href="https://wa.me/919945689996" class="btn-cta" style="background: var(--white); color: var(--pink);">
+                    <i class="fab fa-whatsapp"></i> Get Expert Advice
                 </a>
-                <a href="#" class="btn-cta" style="background: transparent; border: 2px solid var(--white);">
-                    <i class="fas fa-phone"></i> Call Now
+                <a href="tel:919945689996" class="btn-cta" style="background: transparent; border: 2px solid var(--white);">
+                    <i class="fas fa-phone"></i> Call for Free Demo
                 </a>
             </div>
         </div>

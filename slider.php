@@ -19,7 +19,9 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1.2s ease-in-out;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,6 +31,8 @@
 }
 .slide.active {
     opacity: 1;
+    visibility: visible;
+    z-index: 2;
 }
 }
 

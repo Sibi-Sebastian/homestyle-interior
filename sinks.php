@@ -850,7 +850,7 @@
       
       <div class="benefit-card">
         <div class="benefit-icon">
-          <i class="fas fa-sparkles"></i>
+          <i class="fas fa-tools"></i>
         </div>
         <h3>Easy Maintenance</h3>
         <p>Smooth surfaces and accessible parts simplify cleaning and upkeep</p>
