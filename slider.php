@@ -19,9 +19,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    visibility: hidden;
-    z-index: 1;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,8 +29,7 @@
 }
 .slide.active {
     opacity: 1;
-    visibility: visible;
-    z-index: 2;
+}
 }
 
 /* New Hero Slide Colors */
@@ -552,202 +549,70 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎠 DOM Content Loaded - Starting carousel initialization...');
-    
-    // Single initialization attempt
-    setTimeout(initializeCarousel, 100);
-    
-    function initializeCarousel() {
-        console.log('🎠 Attempting to initialize carousel...');
-        
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        const prevBtn = document.getElementById('prev-slide');
-        const nextBtn = document.getElementById('next-slide');
-        const heroSlider = document.querySelector('.hero-slider');
-        
-        console.log('🎠 Carousel elements check:', {
-            slides: slides.length,
-            dots: dots.length,
-            prevBtn: !!prevBtn,
-            nextBtn: !!nextBtn,
-            heroSlider: !!heroSlider
-        });
-        
-        if (slides.length > 0 && dots.length > 0 && prevBtn && nextBtn && heroSlider) {
-            console.log('✅ All carousel elements found, setting up...');
-            setupCarousel(slides, dots, prevBtn, nextBtn, heroSlider);
-        } else {
-            console.warn('⚠️ Some carousel elements missing');
-        }
+    // Hero Slider Functionality
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    let currentSlide = 0;
+    let slideInterval;
+   
+    // Initialize the slider
+    function initSlider() {
+        slides[0].classList.add('active');
+        dots[0].classList.add('active');
+        startSlideInterval();
     }
-    
-    function setupCarousel(slides, dots, prevBtn, nextBtn, heroSlider) {
-        let currentSlide = 0;
-        let slideInterval;
-        let isTransitioning = false;
-        
-        console.log('🎠 Setting up carousel with', slides.length, 'slides');
-        
-        // Initialize the slider
-        function initSlider() {
-            console.log('🎠 Setting up initial slide state...');
-            
-            // Clear all active classes first
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active');
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.classList.remove('active');
-            });
-            
-            // Activate first slide
-            if (slides[0]) {
-                slides[0].classList.add('active');
-            }
-            
-            if (dots[0]) {
-                dots[0].classList.add('active');
-            }
-            
-            console.log('✅ First slide and dot activated');
-            startSlideInterval();
-        }
-        
-        // Start automatic slide rotation
-        function startSlideInterval() {
+   
+    // Start automatic slide rotation
+    function startSlideInterval() {
+        slideInterval = setInterval(() => {
+            goToSlide((currentSlide + 1) % slides.length);
+        }, 5000);
+    }
+   
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        // Remove active class from current slide and dot
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+       
+        // Update current slide index
+        currentSlide = slideIndex;
+       
+        // Add active class to new slide and dot
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+   
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
             clearInterval(slideInterval);
-            slideInterval = setInterval(() => {
-                if (!isTransitioning) {
-                    const nextSlide = (currentSlide + 1) % slides.length;
-                    console.log('🔄 Auto-advancing to slide:', nextSlide);
-                    goToSlide(nextSlide);
-                }
-            }, 5000); // 5 second intervals
-            console.log('⏰ Auto-advance interval started');
-        }
-        
-        // Go to specific slide with smooth transition
-        function goToSlide(slideIndex) {
-            if (slideIndex < 0 || slideIndex >= slides.length || isTransitioning || slideIndex === currentSlide) {
-                return;
-            }
-            
-            isTransitioning = true;
-            console.log(`🎠 Transitioning from slide ${currentSlide} to slide ${slideIndex}`);
-            
-            // Remove active classes from current slide
-            if (slides[currentSlide]) {
-                slides[currentSlide].classList.remove('active');
-            }
-            
-            if (dots[currentSlide]) {
-                dots[currentSlide].classList.remove('active');
-            }
-            
-            // Update current slide
-            currentSlide = slideIndex;
-            
-            // Activate new slide
-            if (slides[currentSlide]) {
-                slides[currentSlide].classList.add('active');
-            }
-            
-            if (dots[currentSlide]) {
-                dots[currentSlide].classList.add('active');
-            }
-            
-            // Allow next transition after animation completes
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 800); // Match CSS transition duration
-            
-            console.log('✅ Slide transition completed to slide:', currentSlide);
-        }
-        
-        // Event listeners for dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log('🎯 Dot clicked:', index);
-                clearInterval(slideInterval);
-                goToSlide(index);
-                setTimeout(startSlideInterval, 100);
-            });
-        });
-        
-        // Event listener for previous button
-        prevBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            console.log('⬅️ Previous button clicked');
-            clearInterval(slideInterval);
-            const prevSlide = currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1;
-            goToSlide(prevSlide);
-            setTimeout(startSlideInterval, 100);
-        });
-        
-        // Event listener for next button
-        nextBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            console.log('➡️ Next button clicked');
-            clearInterval(slideInterval);
-            const nextSlide = (currentSlide + 1) % slides.length;
-            goToSlide(nextSlide);
-            setTimeout(startSlideInterval, 100);
-        });
-        
-        // Pause on hover
-        heroSlider.addEventListener('mouseenter', () => {
-            console.log('⏸️ Pausing carousel on hover');
-            clearInterval(slideInterval);
-        });
-        
-        heroSlider.addEventListener('mouseleave', () => {
-            console.log('▶️ Resuming carousel after hover');
+            goToSlide(index);
             startSlideInterval();
         });
-        
-        // Touch/swipe support for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        heroSlider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        heroSlider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                clearInterval(slideInterval);
-                
-                if (diff > 0) {
-                    // Swipe left - next slide
-                    const nextSlide = (currentSlide + 1) % slides.length;
-                    goToSlide(nextSlide);
-                } else {
-                    // Swipe right - previous slide
-                    const prevSlide = currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1;
-                    goToSlide(prevSlide);
-                }
-                
-                setTimeout(startSlideInterval, 100);
-            }
-        }
-        
-        // Initialize the carousel
-        initSlider();
-        console.log('🎠 Carousel setup completed successfully!');
-        
-        // Mark as successfully initialized
-        window.carouselInitialized = true;
-    }
+    });
+   
+    // Event listener for previous button
+    prevBtn.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        let prevSlide = currentSlide - 1;
+        if (prevSlide < 0) prevSlide = slides.length - 1;
+        goToSlide(prevSlide);
+        startSlideInterval();
+    });
+   
+    // Event listener for next button
+    nextBtn.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        let nextSlide = currentSlide + 1;
+        if (nextSlide >= slides.length) nextSlide = 0;
+        goToSlide(nextSlide);
+        startSlideInterval();
+    });
+   
+    // Initialize slider
+    initSlider();
 });
 </script>

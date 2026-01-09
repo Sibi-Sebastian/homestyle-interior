@@ -213,74 +213,10 @@ header {
     border-radius: 0 0 30px 30px;
 }
 
-.hero-slider {
-    height: 100%;
-    position: relative;
+/* Slider styles removed - now handled in slider.php to avoid conflicts */
 }
 
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 80px;
-    background-size: cover;
-    background-position: center;
-}
-
-.slide.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 2;
-}
-
-.slide-content {
-    max-width: 550px;
-    color: white;
-    transform: translateX(-50px);
-    opacity: 0;
-    transition: all 1s ease 0.3s;
-}
-
-.slide.active .slide-content {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.slide-tag {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: white;
-    padding: 10px 22px;
-    border-radius: 30px;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 25px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    text-transform: uppercase;
-}
-
-.slide-title {
-    font-size: 58px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
-}
-
-.slide-description {
-    font-size: 18px;
-    line-height: 1.6;
+/* Slider styles removed - now handled in slider.php to avoid conflicts */
     margin-bottom: 35px;
     opacity: 0.95;
     max-width: 550px;
@@ -329,12 +265,7 @@ header {
         display: none;
     }
     
-    .slide {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding-top: 60px;
-    }
+    /* Slider responsive styles removed - now handled in slider.php */
     
     .slide-content {
         max-width: 100%;
@@ -344,14 +275,7 @@ header {
 }
 
 @media (max-width: 768px) {
-    .slide {
-        padding: 0 20px;
-        padding-top: 60px;
-    }
-    
-    .slide-title {
-        font-size: 42px;
-    }
+    /* Slider responsive styles removed - now handled in slider.php */
     
     .hero-buttons {
         flex-direction: column;
@@ -365,13 +289,7 @@ header {
 }
 
 @media (max-width: 480px) {
-    .slide-title {
-        font-size: 36px;
-    }
-    
-    .slide-description {
-        font-size: 16px;
-    }
+    /* Slider responsive styles removed - now handled in slider.php */
 }
 
 /* Loading States */
@@ -380,23 +298,5 @@ header {
     pointer-events: none;
 }
 
-/* Preload important images */
-.slide-1 {
-    background: linear-gradient(90deg, rgba(32, 49, 28, 0.80) 0%, rgba(67, 75, 64, 0.80) 100%), 
-                url('https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-}
-
-.slide-2 {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), 
-                url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-}
-
-.slide-3 {
-    background: linear-gradient(90deg, rgba(6, 40, 87, 0.80) 80%, rgba(6, 40, 87, 0.80) 100%), 
-                url('https://images.woodenstreet.de/image/data%2FLooks%2F3.jpg');
-}
-
-.slide-4 {
-    background: linear-gradient(90deg, rgba(14, 30, 50, 0.85) 0%, rgba(71, 21, 83, 0.8) 80%, rgba(95, 29, 76, 0.75) 100%), 
-                url('https://www.theblindssource.com/wp-content/uploads/2019/09/Made-to-measure-blinds.jpg');
+/* Slider background images removed - now handled in slider.php to avoid conflicts */
 }

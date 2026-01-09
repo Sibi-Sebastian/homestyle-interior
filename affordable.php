@@ -201,7 +201,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease, opacity 0.3s ease;
         }
 
         .thumbnails {
@@ -884,7 +884,7 @@
     <script>
         // Image Gallery Functionality
         const images = [
-            'https://pepsindia.b-cdn.net/wp-content/uploads/2025/02/N03-Maroon-Spring-koil-Grown-top-16.png.jpg',
+            'https://pepsindia.b-cdn.net/wp-content/uploads/2025/02/N3-Spring-koil-Crown-top-Lifestyle.jpg',
             'https://pepsindia.b-cdn.net/wp-content/uploads/2025/02/N03-Maroon-Spring-koil-Grown-top-15.png.jpg',
             'https://pepsindia.b-cdn.net/wp-content/uploads/2025/02/N03-Maroon-Spring-koil-Grown-top-17.png.jpg',
             'https://pepsindia.b-cdn.net/wp-content/uploads/2025/02/N03-Maroon-Spring-koil-Grown-top-14.png.jpg',
@@ -971,6 +971,7 @@
                 el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 observer.observe(el);
             });
+        });
 
     </script>
 

@@ -1401,9 +1401,7 @@
         }
         /* Responsive Styles */
         @media (max-width: 1100px) {
-            .slide {
-                padding: 0 40px;
-            }
+            /* Slider styles removed - now handled in slider.php */
            
             .about-container {
                 grid-template-columns: 1fr;
@@ -1427,13 +1425,9 @@
                 display: none;
             }
            
-            .slide {
-                padding: 0 20px;
-            }
+            /* Slider styles removed - now handled in slider.php */
            
-            .slide-title {
-                font-size: 42px;
-            }
+            /* Slider styles removed - now handled in slider.php */
            
             .hero-buttons {
                 flex-direction: row;
@@ -1515,13 +1509,7 @@
             }
         }
         @media (max-width: 768px) {
-            .slide-title {
-                font-size: 36px;
-            }
-           
-            .slide-image {
-                width: 400px;
-                height: 300px;
+            /* Slider styles removed - now handled in slider.php */
             }
            
             .section-title h2 {
@@ -1571,18 +1559,7 @@
                 font-weight: 500;
             }
            
-            .slide-image {
-                width: 320px;
-                height: 240px;
-            }
-           
-            .slide-title {
-                font-size: 32px;
-            }
-           
-            .slide-description {
-                font-size: 16px;
-            }
+            /* Slider styles removed - now handled in slider.php */
            
             .section-title h2 {
                 font-size: 24px;

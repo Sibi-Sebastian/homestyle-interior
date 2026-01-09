@@ -1,203 +1,6 @@
-ION
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎠 DOM Content Loaded - Starting carousel initialization...');
-    
-    // Single initialization attempt
-    setTimeout(initializeCarousel, 100);
-    
-    function initializeCarousel() {
-        console.log('🎠 Attempting to initialize carousel...');
-        
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        const prevBtn = document.getElementById('prev-slide');
-        const nextBtn = document.getElementById('next-slide');
-        const heroSlider = document.querySelector('.hero-slider');
-        
-        console.log('🎠 Carousel elements check:', {
-            slides: slides.length,
-            dots: dots.length,
-            prevBtn: !!prevBtn,
-            nextBtn: !!nextBtn,
-            heroSlider: !!heroSlider
-        });
-        
-        if (slides.length > 0 && dots.length > 0 && prevBtn && nextBtn && heroSlider) {
-            console.log('✅ All carousel elements found, setting up...');
-            setupCarousel(slides, dots, prevBtn, nextBtn, heroSlider);
-        } else {
-            console.warn('⚠️ Some carousel elements missing');
-        }
-    }
-    
-    function setupCarousel(slides, dots, prevBtn, nextBtn, heroSlider) {
-        let currentSlide = 0;
-        let slideInterval;
-        let isTransitioning = false;
-        
-        console.log('🎠 Setting up carousel with', slides.length, 'slides');
-        
-        // Initialize the slider
-        function initSlider() {
-            console.log('🎠 Setting up initial slide state...');
-            
-            // Clear all active classes first
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active');
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.classList.remove('active');
-            });
-            
-            // Activate first slide
-            if (slides[0]) {
-                slides[0].classList.add('active');
-            }
-            
-            if (dots[0]) {
-                dots[0].classList.add('active');
-            }
-            
-            console.log('✅ First slide and dot activated');
-            startSlideInterval();
-        }
-        
-        // Start automatic slide rotation
-        function startSlideInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(() => {
-                if (!isTransitioning) {
-                    const nextSlide = (currentSlide + 1) % slides.length;
-                    console.log('🔄 Auto-advancing to slide:', nextSlide);
-                    goToSlide(nextSlide);
-                }
-            }, 5000); // 5 second intervals
-            console.log('⏰ Auto-advance interval started');
-        }
-        
-        // Go to specific slide with smooth transition
-        function goToSlide(slideIndex) {
-            if (slideIndex < 0 || slideth || isTransitioning || slideIndex === currentSlide) {
-                return;
-            }
-            
-            isTransitioning = true;
-            console.log(`🎠 Transitioning from slide ${currentSlide} to slide ${slideIndex}`);
-            
-            // Remove active classes from current slide
-            if (slides[currentSlide]) {
-                slides[currentSlide].classList.remove('active');
-            }
-            
-            if (dots[currentSlide]) {
-                dots[currentSlide].classList.remove('active');
-            }
-            
-            // Update current slide
-            currentSlide = slideIndex;
-            
-            // Activate new slide
-            if (slides[currentSlide]) {
-                slides[currentSlide].classList.add('active');
-            }
-            
-            if (dots[currentSlide]) {
-                dots[currentSlide].classList.add('active');
-            }
-            
-            // Allow next transition after animation completes
-            setTime) => {
-                isTransitioning = false;
-            }, 800); // Match CSS transition duration
-            
-            console.log('✅ Slide ttSlide);
-        }
-        
-        // Event listeners for dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log('🎯 Dot clicked:', index);
-                clearInterval(slideInterval);
-                goToSlide(index);
-                setTimeout(startSlideInterval, 100);
-            });
-        });
-        
-        // Event listener for previous button
-        prevBtn.addEventListener('click', (e) => {
-            e.preventDefa
-            console.log('⬅️ Previous button clicked');
-            clearInterval(slideInterval);
-            const prevSlide = currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1;
-            goToSlide(prevSlide);
-            setTimeout(startSlideInterval, 100);
-        });
-        
-        // Event listener for next button
-        nextBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            console.log('➡️ Next button clicked');
-            clearInterval(slideInterval);
-            const nextSlide = (currentSlide + 1) % slides.length;
-            goToSlide(nextSlide);
-            setTimeout(startSlide00);
-        });
-        
-        // Pause on hover
-        heroSlider.addEventListener('mouseenter', () => {
-            console.log('⏸️ Pausing carousel on hover');
-            clearInterval(slideInterval);
-        });
-        
-        heroSlider.addEventListener('mouseleave', () => {
-            console.log('▶️ Resuming carousel after hover');
-            startSlideInterval();
-        });
-        
-        // Touch/swipe support for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        heroSlider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        heroSlider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                clearInterval(slideInterval);
-                
-                if (diff > 0) {
-                    // Swipe left - next slide
-                    const nextSlide = (currentSlide + 1) % slides.length;
-                    goToSlide(nextSlide);
-                } else {
-                    // Swipe right - previous slide
-                    const prevSlide = currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1;
-                    goToSlide(prevSlide);
-                }
-                
-                setTimeout(startSlideInterval, 100);
-            }
-        }
-        
-        // Initialize the carousel
-        initSlider();
-        console.log('🎠 Carousel setup completed successfully!');
-        
-        // Mark as successfully initialized
-        window.carouselInitialized = true;
-    }
+// Slider functionality removed to avoid conflicts - now handled in slider.php
 
+document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu functionality
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const nav = document.getElementById('mainNav');
@@ -267,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
    
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (window.nerWidth <= 992 && nav && mobileMenuToggle && menuOverlay) {
+        if (window.innerWidth <= 992 && nav && mobileMenuToggle && menuOverlay) {
             if (!e.target.closest('#mainNav') && !e.target.closest('#mobileMenuToggle')) {
                 nav.classList.remove('active');
                 menuOverlay.classList.remove('active');
@@ -296,7 +99,40 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionHeight = section.clientHeight;
             const sectionId = section.getAttribute('id');
            
-            if (scrollPosition >= sectionTop && scrollPosition < sectio
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+   
+    window.addEventListener('scroll', highlightNavLink);
+});
+
+// Product redirects for search functionality
+const productRedirects = {
+    "sofa": "sofa.php",
+    "sofas": "sofa.php",
+    "furniture": "sofa.php",
+    "mattress": "ortho.php",
+    "mattresses": "ortho.php",
+    "ortho": "ortho.php",
+    "orthopedic": "ortho.php",
+    "curtain": "curtains.php",
+    "curtains": "curtains.php",
+    "blind": "curtains.php",
+    "blinds": "curtains.php",
+    "chimney": "chimneys.php",
+    "chimneys": "chimneys.php",
+    "faucet": "sinks.php",
+    "faucets": "sinks.php",
+    "tap": "sinks.php",
+    "taps": "sinks.php",
+    "sink": "sinks.php",
     "sinks": "sinks.php",
     "hob": "hobtops.php",
     "hobtop": "hobtops.php",
@@ -828,9 +664,7 @@ searchInput.addEventListener('keypress', (e) => {
             } else {
                 initializeCounterSystem();
                 setupTestButton();
-            }on event l},            scrollTimeout =
-           
-//  testimonials
+            }
            
             // CTA button animation
             const ctaButton = document.querySelector('.cta-button');
@@ -953,7 +787,6 @@ searchInput.addEventListener('keypress', (e) => {
             //         }
             //     });
             // });
-        });
 
 // Back to Top Button Functionality
 document.addEventListener('DOMContentLoaded', function() {
