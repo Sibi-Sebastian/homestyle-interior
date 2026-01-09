@@ -1,7 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Slider Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
 <style>
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --blue: #0d4f9e;
+    --violet: #8b2fa3;
+    --pink: #cf3fa6;
+    --white: #ffffff;
+    --dark: #111;
+    --light-gray: #f8f9fa;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
 /* Hero Slider Styles */
 .hero-section {
-    margin-top: 80px;
+    margin-top: 0;
     height: 85vh;
     min-height: 650px;
     position: relative;
@@ -19,9 +53,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    visibility: hidden;
-    z-index: 1;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,9 +63,6 @@
 }
 .slide.active {
     opacity: 1;
-    visibility: visible;
-    z-index: 2;
-}
 }
 
 /* New Hero Slide Colors */
@@ -59,9 +88,7 @@
 }
 
 .slide-4 {
-    background: linear-gradient(90deg,       rgba(14, 30, 50, 0.85) 0%,   /* Darker Brand Blue */
-      rgba(71, 21, 83, 0.8) 80%, /* Darker Violet */
-      rgba(95, 29, 76, 0.75) 100% /* Controlled Pink */), 
+    background: linear-gradient(90deg, rgba(14, 30, 50, 0.85) 0%, rgba(71, 21, 83, 0.8) 80%, rgba(95, 29, 76, 0.75) 100%), 
                 url('https://www.theblindssource.com/wp-content/uploads/2019/09/Made-to-measure-blinds.jpg');
     background-size: cover;
     background-position: center;
@@ -242,6 +269,7 @@
     transform: scale(1.4);
     border-color: white;
 }
+
 /* Arrows on sides, vertically centered, with inward offset */
 .slider-arrows {
     position: absolute;
@@ -251,7 +279,7 @@
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;        /* ← This controls the offset from edges */
+    padding: 0 20px;
     pointer-events: none;
     z-index: 10;
     box-sizing: border-box;
@@ -422,10 +450,6 @@
         <div class="slide slide-3 active">
             <div class="slide-content">
                 <div class="slide-tag">SLEEP WELL</div>
-<!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
                 <h1 class="slide-title">Luxury Sleep Experience</h1>
                 <p class="slide-description">
                     Indulge in our premium mattresses and bedroom furniture designed to provide unparalleled comfort and support for a restful night's sleep.
@@ -450,10 +474,6 @@
         <div class="slide slide-2">
             <div class="slide-content">
                 <div class="slide-tag">KITCHEN ESSENTIALS</div>
-                <!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
                 <h1 class="slide-title">Modern Kitchen Solutions</h1>
                 <p class="slide-description">
                     Upgrade your culinary space with our premium kitchen appliances including chimneys, hobs, faucets, and sinks designed for performance and style.
@@ -478,10 +498,6 @@
         <div class="slide slide-4">
             <div class="slide-content">
                 <div class="slide-tag">LUXURY CURTAINS & BLINDS</div>
-                <!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
                 <h1 class="slide-title">Dress Your Windows with Elegance</h1>
                 <p class="slide-description">
                     Explore our curated collection of premium curtains and blinds,
@@ -509,10 +525,6 @@
         <div class="slide slide-1">
             <div class="slide-content">
                 <div class="slide-tag">PREMIUM COLLECTION</div>
-                <!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
                 <h1 class="slide-title">Elevate Your <br>Living Space</h1>
                 <p class="slide-description">
                     Discover our exclusive range of luxury curtains, furniture, and blinds that blend timeless elegance with modern functionality to transform your home.
@@ -620,3 +632,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initSlider();
 });
 </script>
+
+</body>
+</html>
