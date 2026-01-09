@@ -1011,8 +1011,7 @@
                     <i class="fas fa-shopping-cart"></i> Order Now
                 </a> -->
                 <a href="#" class="btn-cta" style="background: var(--white); color: var(--pink);">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>at with Expert
+                    <i class="fab fa-whatsapp"></i> Chat with Expert
                 </a>
                 <a href="#" class="btn-cta" style="background: transparent; border: 2px solid var(--white);">
                     <i class="fas fa-phone"></i> Call Now

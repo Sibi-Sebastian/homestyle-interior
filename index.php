@@ -8,6 +8,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
     <link rel="stylesheet" href="index.css">
     <script src="active.js" defer></script>
+    <script src="counter.js" defer></script>
     <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -29,142 +30,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
    
 
     
-<!-- Hero Slider Section -->
-<section class="hero-section">
-    <div class="hero-slider">
-
-        <!-- Slide 1 - Gold to Goldenrod (NOW FIRST) -->
-        <div class="slide slide-3 active">
-            <div class="slide-content">
-                <div class="slide-tag">SLEEP WELL</div>
-<!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
-                <h1 class="slide-title">Luxury Sleep Experience</h1>
-                <p class="slide-description">
-                    Indulge in our premium mattresses and bedroom furniture designed to provide unparalleled comfort and support for a restful night's sleep.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Shop Mattresses</button>
-                    <button class="btn-secondary">Bedroom Ideas</button>
-                </div>
-            </div>
-            <div class="slide-image">
-                <div class="image-container">
-                    <img src="images/hero2.png" alt="Premium Mattress" loading="lazy">
-                    <div class="image-overlay">
-                        <div class="image-caption">Orthopaedic Mattress</div>
-                        <div class="image-price">Superior Spinal Support</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 2 - Teal to Light Sea Green (UNCHANGED) -->
-        <div class="slide slide-2">
-            <div class="slide-content">
-                <div class="slide-tag">KITCHEN ESSENTIALS</div>
-                <!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
-                <h1 class="slide-title">Modern Kitchen Solutions</h1>
-                <p class="slide-description">
-                    Upgrade your culinary space with our premium kitchen appliances including chimneys, hobs, faucets, and sinks designed for performance and style.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Explore Kitchen</button>
-                    <button class="btn-secondary">View Appliances</button>
-                </div>
-            </div>
-            <div class="slide-image">
-                <div class="image-container">
-                    <img src="images/hero3.png" alt="Modern Kitchen Appliances" loading="lazy">
-                    <div class="image-overlay">
-                        <div class="image-caption">Smart Induction Hob</div>
-                        <div class="image-price">Energy Efficient Cooking</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3 - Bathroom Essentials (UNCHANGED) -->
-        <div class="slide slide-4">
-            <div class="slide-content">
-                <div class="slide-tag">LUXURY CURTAINS & BLINDS</div>
-                <!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
-                <h1 class="slide-title">Dress Your Windows with Elegance</h1>
-                <p class="slide-description">
-                    Explore our curated collection of premium curtains and blinds,
-                    thoughtfully designed to balance light, privacy, and style—bringing
-                    warmth and refinement to every living space
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Explore Curtains</button>
-                    <button class="btn-secondary">View Collection</button>
-                </div>
-            </div>
-
-            <div class="slide-image desktop-only">
-                <div class="image-container">
-                    <img src="https://www.intoblinds.com.au/wp-content/uploads/2024/07/Blinds-and-Curtains.jpg" alt="Premium Bathroom Suite" loading="lazy">
-                    <div class="image-overlay">
-                        <div class="image-caption">Elegant Curtains & Blinds</div>
-                        <div class="image-price">Light, Privacy & Style Perfectly Balanced</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4 - Premium Furniture Collection (NOW LAST) -->
-        <div class="slide slide-1">
-            <div class="slide-content">
-                <div class="slide-tag">PREMIUM COLLECTION</div>
-                <!-- 25+ Years Badge - Top Center of Entire Slider -->
-<!-- <div class="anniversary-badge-top">
-    <img src="images/25years1.png" alt="25+ Years in Service">
-</div> -->
-                <h1 class="slide-title">Elevate Your <br>Living Space</h1>
-                <p class="slide-description">
-                    Discover our exclusive range of luxury curtains, furniture, and blinds that blend timeless elegance with modern functionality to transform your home.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Shop Now</button>
-                    <button class="btn-secondary">View Collection</button>
-                </div>
-            </div>
-            <div class="slide-image">
-                <div class="image-container">
-                    <img src="images/hero1.png" alt="Luxury Furniture Collection" loading="lazy">
-                    <div class="image-overlay">
-                        <div class="image-caption">Luxury Velvet Sofa</div>
-                        <div class="image-price">Premium Comfort & Style</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <div class="slider-arrows">
-            <button id="prev-slide"><i class="fas fa-chevron-left"></i></button>
-            <button id="next-slide"><i class="fas fa-chevron-right"></i></button>
-        </div>
-
-        <div class="slider-controls">
-            <div class="slider-dots">
-                <div class="dot active" data-slide="0"></div>
-                <div class="dot" data-slide="1"></div>
-                <div class="dot" data-slide="2"></div>
-                <div class="dot" data-slide="3"></div>
-            </div>
-        </div>
-
-    </div>
-</section>
+    <?php include "slider.php" ?>
 
     
     <!-- About Us Section -->
@@ -178,15 +44,15 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
                    
                     <div class="about-stats">
                         <div class="stat-item">
-                            <div class="stat-number" data-count="26">26+</div>
+                            <div class="stat-number" data-count="26">0</div>
                             <div class="stat-label">Years Experience</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-count="2568">2568+</div>
+                            <div class="stat-number" data-count="2568">0</div>
                             <div class="stat-label">Happy Clients</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-count="3689">3689+</div>
+                            <div class="stat-number" data-count="3689">0</div>
                             <div class="stat-label">Projects Completed</div>
                         </div>
                     </div>
